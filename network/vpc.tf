@@ -29,7 +29,7 @@ resource "aws_subnet" "kzonov-private-2" {
 resource "aws_subnet" "kzonov-private-3" {
   vpc_id            = "${aws_vpc.kzonov.id}"
   cidr_block        = "10.24.3.0/24"
-  availability_zone = "eu-west-1a"
+  availability_zone = "eu-west-1b"
 
   tags {
     Owner = "kzonov"
