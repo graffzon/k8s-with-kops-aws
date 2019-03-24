@@ -7,8 +7,8 @@ resource "aws_instance" "bastion" {
   instance_type = "t2.micro"
   key_name      = "kzonov"
 
-  # TODO: Remove kops from here and use it in a private instance
-  user_data = "${data.template_file.user_data.rendered}"
+  user_data            = "${data.template_file.user_data.rendered}"
+  iam_instance_profile = "${aws_iam_instance_profile.cluster-manager.name}"
 
   network_interface {
     network_interface_id = "${aws_network_interface.bastion.id}"
