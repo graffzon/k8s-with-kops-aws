@@ -1,17 +1,15 @@
 provider "aws" {
-  region  = "eu-west-1"
-  profile = "sandbox"
+  region = "eu-central-1"
 }
 
 terraform {
   backend "s3" {
-    region  = "eu-west-1"
-    profile = "sandbox"
+    region = "eu-central-1"
 
     encrypt = true
-    bucket  = "temp-terraform-remote-state-storage-s3-kzonov"
+    bucket  = "terraform-remote-state-storage-s3-kzonov"
     key     = "kzonov/network.tfstate"
 
-    dynamodb_table = "temp-terraform-remote-state-lock-kzonov"
+    dynamodb_table = "terraform-remote-state-lock-kzonov"
   }
 }

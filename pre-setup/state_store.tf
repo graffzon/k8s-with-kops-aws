@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "state-storage-s3" {
-  bucket = "temp-terraform-remote-state-storage-s3-kzonov"
+  bucket = "terraform-remote-state-storage-s3-kzonov"
 
   versioning {
     enabled = true
@@ -10,8 +10,8 @@ resource "aws_s3_bucket" "state-storage-s3" {
   }
 }
 
-resource "aws_dynamodb_table" "temp-terraform-remote-state-lock-kzonov" {
-  name           = "temp-terraform-remote-state-lock-kzonov"
+resource "aws_dynamodb_table" "terraform-remote-state-lock-kzonov" {
+  name           = "terraform-remote-state-lock-kzonov"
   read_capacity  = 1
   write_capacity = 1
   hash_key       = "LockID"

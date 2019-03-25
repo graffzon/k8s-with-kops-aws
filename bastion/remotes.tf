@@ -13,9 +13,8 @@ data "terraform_remote_state" "network" {
   backend = "s3"
 
   config {
-    bucket  = "temp-terraform-remote-state-storage-s3-kzonov"
-    region  = "eu-west-1"
-    profile = "sandbox"
-    key     = "kzonov/network.tfstate"
+    bucket = "terraform-remote-state-storage-s3-kzonov"
+    region = "eu-central-1"
+    key    = "kzonov/network.tfstate"
   }
 }
