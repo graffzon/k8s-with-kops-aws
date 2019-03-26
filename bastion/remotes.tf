@@ -18,3 +18,13 @@ data "terraform_remote_state" "network" {
     key    = "kzonov/network.tfstate"
   }
 }
+
+data "terraform_remote_state" "k8s" {
+  backend = "s3"
+
+  config {
+    bucket = "terraform-remote-state-storage-s3-kzonov"
+    region = "eu-central-1"
+    key    = "kzonov/k8s.tfstate"
+  }
+}

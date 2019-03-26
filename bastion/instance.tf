@@ -8,7 +8,7 @@ resource "aws_instance" "bastion" {
   key_name      = "kzonov"
 
   user_data            = "${data.template_file.user_data.rendered}"
-  iam_instance_profile = "${aws_iam_instance_profile.cluster-manager.name}"
+  iam_instance_profile = "${aws_iam_instance_profile.bastion-extended.name}"
 
   network_interface {
     network_interface_id = "${aws_network_interface.bastion.id}"
